@@ -1,0 +1,10 @@
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\bin\Debug\CaçaPalavras.exe.config
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\bin\Debug\CaçaPalavras.exe
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\bin\Debug\CaçaPalavras.pdb
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.csproj.AssemblyReference.cache
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.Form1.resources
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.Properties.Resources.resources
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.csproj.GenerateResource.cache
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.csproj.CoreCompileInputs.cache
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.exe
+C:\Users\calab\Documents\GitHub\TrabalhoMVC\CaçaPalavras\obj\Debug\CaçaPalavras.pdb
