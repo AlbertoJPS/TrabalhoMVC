@@ -37,7 +37,7 @@ namespace TrabalhoMVC_02
 
         private void buttonIniciar_Click(object sender, EventArgs e)
         {
-
+            textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();
         }
 
         private void buttonResetar_Click(object sender, EventArgs e)

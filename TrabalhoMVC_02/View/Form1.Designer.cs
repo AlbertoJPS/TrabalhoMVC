@@ -29,6 +29,10 @@ namespace TrabalhoMVC_02
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -46,6 +50,10 @@ namespace TrabalhoMVC_02
             this.matrix7 = new System.Windows.Forms.Button();
             this.matrix8 = new System.Windows.Forms.Button();
             this.matrix9 = new System.Windows.Forms.Button();
+            this.Rodada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Palavra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jogador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,8 +72,13 @@ namespace TrabalhoMVC_02
             // 
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Rodada,
+            this.Palavra,
+            this.Pontos,
+            this.Jogador});
             this.dataGridView.GridColor = System.Drawing.Color.SpringGreen;
-            this.dataGridView.Location = new System.Drawing.Point(29, 95);
+            this.dataGridView.Location = new System.Drawing.Point(29, 86);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.Size = new System.Drawing.Size(546, 197);
@@ -87,7 +100,7 @@ namespace TrabalhoMVC_02
             this.textBoxPalavra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxPalavra.Font = new System.Drawing.Font("Immortal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPalavra.ForeColor = System.Drawing.Color.SpringGreen;
-            this.textBoxPalavra.Location = new System.Drawing.Point(246, 358);
+            this.textBoxPalavra.Location = new System.Drawing.Point(246, 342);
             this.textBoxPalavra.MaxLength = 6;
             this.textBoxPalavra.Name = "textBoxPalavra";
             this.textBoxPalavra.PlaceholderText = "<<< ESCREVA AQUI >>>";
@@ -101,7 +114,7 @@ namespace TrabalhoMVC_02
             this.buttonIniciar.BackColor = System.Drawing.Color.SpringGreen;
             this.buttonIniciar.Font = new System.Drawing.Font("FFF Tusj", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonIniciar.ForeColor = System.Drawing.Color.Black;
-            this.buttonIniciar.Location = new System.Drawing.Point(246, 395);
+            this.buttonIniciar.Location = new System.Drawing.Point(246, 379);
             this.buttonIniciar.Name = "buttonIniciar";
             this.buttonIniciar.Size = new System.Drawing.Size(329, 50);
             this.buttonIniciar.TabIndex = 11;
@@ -253,6 +266,59 @@ namespace TrabalhoMVC_02
             this.matrix9.Text = "9";
             this.matrix9.UseVisualStyleBackColor = false;
             // 
+            // Rodada
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Rodada.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Rodada.HeaderText = "Rodada";
+            this.Rodada.MaxInputLength = 1000;
+            this.Rodada.Name = "Rodada";
+            // 
+            // Palavra
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Palavra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Palavra.HeaderText = "Palavra";
+            this.Palavra.MaxInputLength = 6;
+            this.Palavra.Name = "Palavra";
+            this.Palavra.Width = 200;
+            // 
+            // Pontos
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Pontos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Pontos.HeaderText = "Pontos";
+            this.Pontos.MaxInputLength = 1000;
+            this.Pontos.Name = "Pontos";
+            // 
+            // Jogador
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Jogador.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Jogador.HeaderText = "Jogador";
+            this.Jogador.MaxInputLength = 1000;
+            this.Jogador.Name = "Jogador";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -290,7 +356,6 @@ namespace TrabalhoMVC_02
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label labelPalavra;
-        private System.Windows.Forms.TextBox textBoxPalavra;
         private System.Windows.Forms.Button buttonIniciar;
         private System.Windows.Forms.Button buttonResetar;
         private System.Windows.Forms.Button buttonSair;
@@ -303,6 +368,11 @@ namespace TrabalhoMVC_02
         private System.Windows.Forms.Button matrix7;
         private System.Windows.Forms.Button matrix8;
         private System.Windows.Forms.Button matrix9;
+        private System.Windows.Forms.TextBox textBoxPalavra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rodada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Palavra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pontos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jogador;
     }
 }
 
