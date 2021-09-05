@@ -12,6 +12,9 @@ namespace TrabalhoMVC_02
 {
     public partial class Form1 : Form
     {
+        List<string> ListaDePalavras = new List<string>();
+        Model.Jogador jogador = new Model.Jogador();
+
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +42,12 @@ namespace TrabalhoMVC_02
 
         private void buttonResetar_Click(object sender, EventArgs e)
         {
-
+            EscreveMatrix();
+            textBoxPalavra.Clear();
+            //dgPontos.Rows.Clear();
+            //lblPontos.Text = "";
+            ListaDePalavras.Clear();
+            
         }
 
         private void buttonSair_Click(object sender, EventArgs e)

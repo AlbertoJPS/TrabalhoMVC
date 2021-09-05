@@ -88,9 +88,13 @@ namespace TrabalhoMVC_02
             this.textBoxPalavra.Font = new System.Drawing.Font("Immortal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPalavra.ForeColor = System.Drawing.Color.SpringGreen;
             this.textBoxPalavra.Location = new System.Drawing.Point(246, 358);
+            this.textBoxPalavra.MaxLength = 6;
             this.textBoxPalavra.Name = "textBoxPalavra";
+            this.textBoxPalavra.PlaceholderText = "<<< ESCREVA AQUI >>>";
             this.textBoxPalavra.Size = new System.Drawing.Size(329, 31);
             this.textBoxPalavra.TabIndex = 10;
+            this.textBoxPalavra.Tag = "";
+            this.textBoxPalavra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonIniciar
             // 
