@@ -22,6 +22,8 @@ namespace TrabalhoMVC_02
         }
         public void EscreveMatrix()
         {
+            // Matrix será a referencia usada para cada letra usada no tabuleiro
+
             matrix1.Text = Model.Geradores.iniciaTabuleiro("A", "D");
             matrix2.Text = Model.Geradores.iniciaTabuleiro("E", "F");
             matrix3.Text = Model.Geradores.iniciaTabuleiro("B", "C");

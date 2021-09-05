@@ -12,6 +12,7 @@ namespace TrabalhoMVC_02.Controller
         {
             List<string> listagem = new List<string>();
             acertos = 0;
+            int acertosTemp = 0;
             int pontos = 0;
             string numProcura = "";
             //bool confere = false;
@@ -26,7 +27,14 @@ namespace TrabalhoMVC_02.Controller
                         //confere = true;
                         numProcura = matriz[i][j];
                         acertos += 1;
-                        pontos += 0.5;
+                        acertosTemp += 1;
+                        
+                        if (acertosTemp == 2)
+                        {
+                            pontos += 1;
+                            acertosTemp = 0;
+                        }
+                        
                         i = 20;
                         break;
                     }
