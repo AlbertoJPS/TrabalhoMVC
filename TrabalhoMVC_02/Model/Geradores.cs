@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabalhoMVC_02.Model
 {
-    class Gerador
+    class Geradores
     {
         public static string iniciaTabuleiro(string matrix1, string matrix2)
         {
