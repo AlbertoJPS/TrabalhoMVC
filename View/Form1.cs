@@ -40,8 +40,17 @@ namespace TrabalhoMVC_02
 
         private void buttonIniciar_Click(object sender, EventArgs e)
         {
-            textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();    
+            textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();
 
+                                 //---------------------------------------------------------------------------------------------------------------------------------
+                                 //---------------------------------------------------------------------------------------------------------------------------------
+                                 //
+                                 // fazer uma verificação para descobrir se são apenas letras para dar continuidade,
+                                 // ou possuem numeros e caracteres especiais dentro da palavra 
+                                 //
+                                 //---------------------------------------------------------------------------------------------------------------------------------
+                                 //---------------------------------------------------------------------------------------------------------------------------------
+           
             bool repetido = false;
             string[][] matriztabuleiro = new string[3][];
 
