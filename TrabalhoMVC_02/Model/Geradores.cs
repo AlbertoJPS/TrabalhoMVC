@@ -11,8 +11,7 @@ namespace TrabalhoMVC_02.Model
         public static string iniciaTabuleiro(string matrix1, string matrix2)
         {
             Random aleatorio = new Random();
-            //int matrix = aleatorio.Next(1, 3);
-            int matrix = aleatorio.Next(1, 2);
+            int matrix = aleatorio.Next(1, 3);
 
             if (matrix == 1)
             {
@@ -26,8 +25,7 @@ namespace TrabalhoMVC_02.Model
         public static string iniciaTabuleiro(string matrix1, string matrix2, string matrix3)
         {
             Random aleatorio = new Random();
-            //int matrix = aleatorio.Next(1, 4);
-            int matrix = aleatorio.Next(1, 3);
+            int matrix = aleatorio.Next(1, 4);
 
             if (matrix == 1)
             {

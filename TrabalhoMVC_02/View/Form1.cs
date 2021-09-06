@@ -39,7 +39,7 @@ namespace TrabalhoMVC_02
 
         private void buttonIniciar_Click(object sender, EventArgs e)
         {
-            textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();
+            textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();    
 
             bool repetido = false;
             string[][] matriztabuleiro = new string[3][];
@@ -73,21 +73,40 @@ namespace TrabalhoMVC_02
 
             if (repetido == false)
             {
-                ListaDePalavras.Add(textBoxPalavra.Text);
-                Controller.Controladores.Pontos(matriztabuleiro, textBoxPalavra.Text, out int acertos);
+                // faz uma tentativa na procura por erros, e em seguida se o resultado for positivo, dá continuidade ao programa
+                // em caso de erro ele apaga o q foi ecrito na caixa de texto e da um aviso de erro
 
-                jogada.Rodada += 1;
-                jogada.Palavra = textBoxPalavra.Text;
-                jogada.Pontos = acertos;
-                jogada.Jogador = Controller.Controladores.Pontos(matriztabuleiro, textBoxPalavra.Text, out acertos);
+                bool valido = true;
+                Controller.Controladores.CalculaPontos(matriztabuleiro, textBoxPalavra.Text);
+                
+                if (Controller.Controladores.PalavraInvalida(valido) == true)
+                {
+                    ListaDePalavras.Add(textBoxPalavra.Text);
 
-                dataGridView.Rows.Add(jogada.Rodada, jogada.Palavra, jogada.Pontos, jogada.Jogador);
+                    jogada.Rodada++;
+                    jogada.Palavra = textBoxPalavra.Text;
+                    jogada.Acertos = Controller.Controladores.CalculaPontos(matriztabuleiro, textBoxPalavra.Text).acertos;
+                    jogada.Pontos = Controller.Controladores.CalculaPontos(matriztabuleiro, textBoxPalavra.Text).pontos;
+
+                    dataGridView.Rows.Add(jogada.Rodada, jogada.Palavra, jogada.Acertos, jogada.Pontos);
+
+                    textBoxPalavra.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Contém Letra Repetida ou Invalida, tente outra!");
+                    textBoxPalavra.Clear();
+                } 
+            
             }
             else if (repetido == true)
             {
                 MessageBox.Show("Palavra Repetida, tente outra!");
+                textBoxPalavra.Clear();
             }
+            
         }
+
 
         private void buttonResetar_Click(object sender, EventArgs e)
         {

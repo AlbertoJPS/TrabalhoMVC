@@ -36,6 +36,10 @@ namespace TrabalhoMVC_02
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Rodada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Palavra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPalavra = new System.Windows.Forms.Label();
             this.textBoxPalavra = new System.Windows.Forms.TextBox();
             this.buttonIniciar = new System.Windows.Forms.Button();
@@ -50,10 +54,7 @@ namespace TrabalhoMVC_02
             this.matrix7 = new System.Windows.Forms.Button();
             this.matrix8 = new System.Windows.Forms.Button();
             this.matrix9 = new System.Windows.Forms.Button();
-            this.Rodada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Palavra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jogador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,196 +76,17 @@ namespace TrabalhoMVC_02
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Rodada,
             this.Palavra,
-            this.Pontos,
-            this.Jogador});
+            this.Acertos,
+            this.Pontos});
             this.dataGridView.GridColor = System.Drawing.Color.SpringGreen;
             this.dataGridView.Location = new System.Drawing.Point(29, 86);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.Size = new System.Drawing.Size(546, 197);
-            this.dataGridView.TabIndex = 1;
-            // 
-            // labelPalavra
-            // 
-            this.labelPalavra.AutoSize = true;
-            this.labelPalavra.BackColor = System.Drawing.Color.Transparent;
-            this.labelPalavra.Font = new System.Drawing.Font("FFF Tusj", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPalavra.Location = new System.Drawing.Point(246, 308);
-            this.labelPalavra.Name = "labelPalavra";
-            this.labelPalavra.Size = new System.Drawing.Size(329, 31);
-            this.labelPalavra.TabIndex = 2;
-            this.labelPalavra.Text = "DIGITE UMA PALAVRA";
-            // 
-            // textBoxPalavra
-            // 
-            this.textBoxPalavra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxPalavra.Font = new System.Drawing.Font("Immortal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPalavra.ForeColor = System.Drawing.Color.SpringGreen;
-            this.textBoxPalavra.Location = new System.Drawing.Point(246, 342);
-            this.textBoxPalavra.MaxLength = 6;
-            this.textBoxPalavra.Name = "textBoxPalavra";
-            this.textBoxPalavra.PlaceholderText = "<<< ESCREVA AQUI >>>";
-            this.textBoxPalavra.Size = new System.Drawing.Size(329, 31);
-            this.textBoxPalavra.TabIndex = 10;
-            this.textBoxPalavra.Tag = "";
-            this.textBoxPalavra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // buttonIniciar
-            // 
-            this.buttonIniciar.BackColor = System.Drawing.Color.SpringGreen;
-            this.buttonIniciar.Font = new System.Drawing.Font("FFF Tusj", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonIniciar.ForeColor = System.Drawing.Color.Black;
-            this.buttonIniciar.Location = new System.Drawing.Point(246, 379);
-            this.buttonIniciar.Name = "buttonIniciar";
-            this.buttonIniciar.Size = new System.Drawing.Size(329, 50);
-            this.buttonIniciar.TabIndex = 11;
-            this.buttonIniciar.Text = "INICIAR CAÇA";
-            this.buttonIniciar.UseVisualStyleBackColor = false;
-            this.buttonIniciar.Click += new System.EventHandler(this.buttonIniciar_Click);
-            // 
-            // buttonResetar
-            // 
-            this.buttonResetar.BackColor = System.Drawing.Color.DarkRed;
-            this.buttonResetar.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonResetar.ForeColor = System.Drawing.Color.Cyan;
-            this.buttonResetar.Location = new System.Drawing.Point(246, 454);
-            this.buttonResetar.Name = "buttonResetar";
-            this.buttonResetar.Size = new System.Drawing.Size(155, 33);
-            this.buttonResetar.TabIndex = 12;
-            this.buttonResetar.Text = "RESETAR";
-            this.buttonResetar.UseVisualStyleBackColor = false;
-            this.buttonResetar.Click += new System.EventHandler(this.buttonResetar_Click);
-            // 
-            // buttonSair
-            // 
-            this.buttonSair.BackColor = System.Drawing.Color.DarkRed;
-            this.buttonSair.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSair.ForeColor = System.Drawing.Color.Yellow;
-            this.buttonSair.Location = new System.Drawing.Point(420, 454);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(155, 33);
-            this.buttonSair.TabIndex = 13;
-            this.buttonSair.Text = "SAIR";
-            this.buttonSair.UseVisualStyleBackColor = false;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // matrix1
-            // 
-            this.matrix1.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix1.Enabled = false;
-            this.matrix1.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix1.ForeColor = System.Drawing.Color.Black;
-            this.matrix1.Location = new System.Drawing.Point(29, 313);
-            this.matrix1.Name = "matrix1";
-            this.matrix1.Size = new System.Drawing.Size(64, 58);
-            this.matrix1.TabIndex = 1;
-            this.matrix1.Text = "1";
-            this.matrix1.UseVisualStyleBackColor = false;
-            // 
-            // matrix3
-            // 
-            this.matrix3.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix3.Enabled = false;
-            this.matrix3.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix3.ForeColor = System.Drawing.Color.Black;
-            this.matrix3.Location = new System.Drawing.Point(157, 313);
-            this.matrix3.Name = "matrix3";
-            this.matrix3.Size = new System.Drawing.Size(64, 58);
-            this.matrix3.TabIndex = 3;
-            this.matrix3.Text = "3";
-            this.matrix3.UseVisualStyleBackColor = false;
-            // 
-            // matrix2
-            // 
-            this.matrix2.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix2.Enabled = false;
-            this.matrix2.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix2.ForeColor = System.Drawing.Color.Black;
-            this.matrix2.Location = new System.Drawing.Point(93, 313);
-            this.matrix2.Name = "matrix2";
-            this.matrix2.Size = new System.Drawing.Size(64, 58);
-            this.matrix2.TabIndex = 2;
-            this.matrix2.Text = "2";
-            this.matrix2.UseVisualStyleBackColor = false;
-            // 
-            // matrix4
-            // 
-            this.matrix4.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix4.Enabled = false;
-            this.matrix4.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix4.ForeColor = System.Drawing.Color.Black;
-            this.matrix4.Location = new System.Drawing.Point(29, 371);
-            this.matrix4.Name = "matrix4";
-            this.matrix4.Size = new System.Drawing.Size(64, 58);
-            this.matrix4.TabIndex = 4;
-            this.matrix4.Text = "4";
-            this.matrix4.UseVisualStyleBackColor = false;
-            // 
-            // matrix5
-            // 
-            this.matrix5.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix5.Enabled = false;
-            this.matrix5.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix5.ForeColor = System.Drawing.Color.Black;
-            this.matrix5.Location = new System.Drawing.Point(93, 371);
-            this.matrix5.Name = "matrix5";
-            this.matrix5.Size = new System.Drawing.Size(64, 58);
-            this.matrix5.TabIndex = 5;
-            this.matrix5.Text = "5";
-            this.matrix5.UseVisualStyleBackColor = false;
-            // 
-            // matrix6
-            // 
-            this.matrix6.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix6.Enabled = false;
-            this.matrix6.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix6.ForeColor = System.Drawing.Color.Black;
-            this.matrix6.Location = new System.Drawing.Point(157, 371);
-            this.matrix6.Name = "matrix6";
-            this.matrix6.Size = new System.Drawing.Size(64, 58);
-            this.matrix6.TabIndex = 6;
-            this.matrix6.Text = "6";
-            this.matrix6.UseVisualStyleBackColor = false;
-            // 
-            // matrix7
-            // 
-            this.matrix7.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix7.Enabled = false;
-            this.matrix7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
-            this.matrix7.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix7.ForeColor = System.Drawing.Color.Black;
-            this.matrix7.Location = new System.Drawing.Point(29, 429);
-            this.matrix7.Name = "matrix7";
-            this.matrix7.Size = new System.Drawing.Size(64, 58);
-            this.matrix7.TabIndex = 7;
-            this.matrix7.Text = "7";
-            this.matrix7.UseVisualStyleBackColor = false;
-            // 
-            // matrix8
-            // 
-            this.matrix8.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix8.Enabled = false;
-            this.matrix8.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix8.ForeColor = System.Drawing.Color.Black;
-            this.matrix8.Location = new System.Drawing.Point(93, 429);
-            this.matrix8.Name = "matrix8";
-            this.matrix8.Size = new System.Drawing.Size(64, 58);
-            this.matrix8.TabIndex = 8;
-            this.matrix8.Text = "8";
-            this.matrix8.UseVisualStyleBackColor = false;
-            // 
-            // matrix9
-            // 
-            this.matrix9.BackColor = System.Drawing.Color.SpringGreen;
-            this.matrix9.Enabled = false;
-            this.matrix9.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.matrix9.ForeColor = System.Drawing.Color.Black;
-            this.matrix9.Location = new System.Drawing.Point(157, 429);
-            this.matrix9.Name = "matrix9";
-            this.matrix9.Size = new System.Drawing.Size(64, 58);
-            this.matrix9.TabIndex = 9;
-            this.matrix9.Text = "9";
-            this.matrix9.UseVisualStyleBackColor = false;
+            this.dataGridView.TabIndex = 100;
+            this.dataGridView.TabStop = false;
             // 
             // Rodada
             // 
@@ -278,6 +100,7 @@ namespace TrabalhoMVC_02
             this.Rodada.HeaderText = "Rodada";
             this.Rodada.MaxInputLength = 1000;
             this.Rodada.Name = "Rodada";
+            this.Rodada.ReadOnly = true;
             // 
             // Palavra
             // 
@@ -291,9 +114,10 @@ namespace TrabalhoMVC_02
             this.Palavra.HeaderText = "Palavra";
             this.Palavra.MaxInputLength = 6;
             this.Palavra.Name = "Palavra";
+            this.Palavra.ReadOnly = true;
             this.Palavra.Width = 200;
             // 
-            // Pontos
+            // Acertos
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -301,12 +125,13 @@ namespace TrabalhoMVC_02
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SpringGreen;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Pontos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Pontos.HeaderText = "Pontos";
-            this.Pontos.MaxInputLength = 1000;
-            this.Pontos.Name = "Pontos";
+            this.Acertos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Acertos.HeaderText = "Acertos";
+            this.Acertos.MaxInputLength = 1000;
+            this.Acertos.Name = "Acertos";
+            this.Acertos.ReadOnly = true;
             // 
-            // Jogador
+            // Pontos
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -314,10 +139,203 @@ namespace TrabalhoMVC_02
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SpringGreen;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Jogador.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Jogador.HeaderText = "Jogador";
-            this.Jogador.MaxInputLength = 1000;
-            this.Jogador.Name = "Jogador";
+            this.Pontos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Pontos.HeaderText = "Pontos";
+            this.Pontos.MaxInputLength = 1000;
+            this.Pontos.Name = "Pontos";
+            this.Pontos.ReadOnly = true;
+            // 
+            // labelPalavra
+            // 
+            this.labelPalavra.AutoSize = true;
+            this.labelPalavra.BackColor = System.Drawing.Color.Transparent;
+            this.labelPalavra.Font = new System.Drawing.Font("FFF Tusj", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPalavra.Location = new System.Drawing.Point(246, 308);
+            this.labelPalavra.Name = "labelPalavra";
+            this.labelPalavra.Size = new System.Drawing.Size(329, 31);
+            this.labelPalavra.TabIndex = 1;
+            this.labelPalavra.Text = "DIGITE UMA PALAVRA";
+            // 
+            // textBoxPalavra
+            // 
+            this.textBoxPalavra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxPalavra.Font = new System.Drawing.Font("Immortal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPalavra.ForeColor = System.Drawing.Color.SpringGreen;
+            this.textBoxPalavra.Location = new System.Drawing.Point(246, 342);
+            this.textBoxPalavra.MaxLength = 6;
+            this.textBoxPalavra.Name = "textBoxPalavra";
+            this.textBoxPalavra.PlaceholderText = "<<< ESCREVA AQUI >>>";
+            this.textBoxPalavra.Size = new System.Drawing.Size(329, 31);
+            this.textBoxPalavra.TabIndex = 2;
+            this.textBoxPalavra.Tag = "";
+            this.textBoxPalavra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonIniciar
+            // 
+            this.buttonIniciar.BackColor = System.Drawing.Color.SpringGreen;
+            this.buttonIniciar.Font = new System.Drawing.Font("FFF Tusj", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonIniciar.ForeColor = System.Drawing.Color.Black;
+            this.buttonIniciar.Location = new System.Drawing.Point(246, 379);
+            this.buttonIniciar.Name = "buttonIniciar";
+            this.buttonIniciar.Size = new System.Drawing.Size(329, 50);
+            this.buttonIniciar.TabIndex = 3;
+            this.buttonIniciar.Text = "INICIAR CAÇA";
+            this.buttonIniciar.UseVisualStyleBackColor = false;
+            this.buttonIniciar.Click += new System.EventHandler(this.buttonIniciar_Click);
+            // 
+            // buttonResetar
+            // 
+            this.buttonResetar.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonResetar.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonResetar.ForeColor = System.Drawing.Color.Cyan;
+            this.buttonResetar.Location = new System.Drawing.Point(246, 454);
+            this.buttonResetar.Name = "buttonResetar";
+            this.buttonResetar.Size = new System.Drawing.Size(155, 33);
+            this.buttonResetar.TabIndex = 4;
+            this.buttonResetar.Text = "RESETAR";
+            this.buttonResetar.UseVisualStyleBackColor = false;
+            this.buttonResetar.Click += new System.EventHandler(this.buttonResetar_Click);
+            // 
+            // buttonSair
+            // 
+            this.buttonSair.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonSair.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonSair.ForeColor = System.Drawing.Color.Yellow;
+            this.buttonSair.Location = new System.Drawing.Point(420, 454);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(155, 33);
+            this.buttonSair.TabIndex = 5;
+            this.buttonSair.Text = "SAIR";
+            this.buttonSair.UseVisualStyleBackColor = false;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
+            // matrix1
+            // 
+            this.matrix1.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix1.Enabled = false;
+            this.matrix1.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix1.ForeColor = System.Drawing.Color.Black;
+            this.matrix1.Location = new System.Drawing.Point(29, 313);
+            this.matrix1.Name = "matrix1";
+            this.matrix1.Size = new System.Drawing.Size(64, 58);
+            this.matrix1.TabIndex = 10;
+            this.matrix1.Text = "1";
+            this.matrix1.UseVisualStyleBackColor = false;
+            // 
+            // matrix3
+            // 
+            this.matrix3.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix3.Enabled = false;
+            this.matrix3.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix3.ForeColor = System.Drawing.Color.Black;
+            this.matrix3.Location = new System.Drawing.Point(157, 313);
+            this.matrix3.Name = "matrix3";
+            this.matrix3.Size = new System.Drawing.Size(64, 58);
+            this.matrix3.TabIndex = 30;
+            this.matrix3.Text = "3";
+            this.matrix3.UseVisualStyleBackColor = false;
+            // 
+            // matrix2
+            // 
+            this.matrix2.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix2.Enabled = false;
+            this.matrix2.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix2.ForeColor = System.Drawing.Color.Black;
+            this.matrix2.Location = new System.Drawing.Point(93, 313);
+            this.matrix2.Name = "matrix2";
+            this.matrix2.Size = new System.Drawing.Size(64, 58);
+            this.matrix2.TabIndex = 20;
+            this.matrix2.Text = "2";
+            this.matrix2.UseVisualStyleBackColor = false;
+            // 
+            // matrix4
+            // 
+            this.matrix4.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix4.Enabled = false;
+            this.matrix4.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix4.ForeColor = System.Drawing.Color.Black;
+            this.matrix4.Location = new System.Drawing.Point(29, 371);
+            this.matrix4.Name = "matrix4";
+            this.matrix4.Size = new System.Drawing.Size(64, 58);
+            this.matrix4.TabIndex = 40;
+            this.matrix4.Text = "4";
+            this.matrix4.UseVisualStyleBackColor = false;
+            // 
+            // matrix5
+            // 
+            this.matrix5.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix5.Enabled = false;
+            this.matrix5.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix5.ForeColor = System.Drawing.Color.Black;
+            this.matrix5.Location = new System.Drawing.Point(93, 371);
+            this.matrix5.Name = "matrix5";
+            this.matrix5.Size = new System.Drawing.Size(64, 58);
+            this.matrix5.TabIndex = 50;
+            this.matrix5.Text = "5";
+            this.matrix5.UseVisualStyleBackColor = false;
+            // 
+            // matrix6
+            // 
+            this.matrix6.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix6.Enabled = false;
+            this.matrix6.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix6.ForeColor = System.Drawing.Color.Black;
+            this.matrix6.Location = new System.Drawing.Point(157, 371);
+            this.matrix6.Name = "matrix6";
+            this.matrix6.Size = new System.Drawing.Size(64, 58);
+            this.matrix6.TabIndex = 60;
+            this.matrix6.Text = "6";
+            this.matrix6.UseVisualStyleBackColor = false;
+            // 
+            // matrix7
+            // 
+            this.matrix7.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix7.Enabled = false;
+            this.matrix7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SpringGreen;
+            this.matrix7.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix7.ForeColor = System.Drawing.Color.Black;
+            this.matrix7.Location = new System.Drawing.Point(29, 429);
+            this.matrix7.Name = "matrix7";
+            this.matrix7.Size = new System.Drawing.Size(64, 58);
+            this.matrix7.TabIndex = 70;
+            this.matrix7.Text = "7";
+            this.matrix7.UseVisualStyleBackColor = false;
+            // 
+            // matrix8
+            // 
+            this.matrix8.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix8.Enabled = false;
+            this.matrix8.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix8.ForeColor = System.Drawing.Color.Black;
+            this.matrix8.Location = new System.Drawing.Point(93, 429);
+            this.matrix8.Name = "matrix8";
+            this.matrix8.Size = new System.Drawing.Size(64, 58);
+            this.matrix8.TabIndex = 80;
+            this.matrix8.Text = "8";
+            this.matrix8.UseVisualStyleBackColor = false;
+            // 
+            // matrix9
+            // 
+            this.matrix9.BackColor = System.Drawing.Color.SpringGreen;
+            this.matrix9.Enabled = false;
+            this.matrix9.Font = new System.Drawing.Font("Immortal", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.matrix9.ForeColor = System.Drawing.Color.Black;
+            this.matrix9.Location = new System.Drawing.Point(157, 429);
+            this.matrix9.Name = "matrix9";
+            this.matrix9.Size = new System.Drawing.Size(64, 58);
+            this.matrix9.TabIndex = 90;
+            this.matrix9.Text = "9";
+            this.matrix9.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Location = new System.Drawing.Point(597, -2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(10, 10);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -325,6 +343,7 @@ namespace TrabalhoMVC_02
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(604, 517);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.matrix9);
             this.Controls.Add(this.matrix8);
             this.Controls.Add(this.matrix7);
@@ -371,8 +390,9 @@ namespace TrabalhoMVC_02
         private System.Windows.Forms.TextBox textBoxPalavra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rodada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Palavra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acertos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pontos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jogador;
+        private System.Windows.Forms.Button button1;
     }
 }
 

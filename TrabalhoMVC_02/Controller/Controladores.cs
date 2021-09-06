@@ -3,132 +3,131 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TrabalhoMVC_02.Controller
 {
     class Controladores
     {
-        public static int Pontos(string[][] matriz, string posicao, out int acertos)
+        public static string finalizar = "";
+        public static bool PalavraInvalida(bool valido)
         {
-            List<string> listagem = new List<string>();
-            acertos = 0;
+            if (finalizar == "erro")
+            { return false; }
+            else
+            { return true; }
+        }
+
+        public static (int pontos, int acertos) CalculaPontos(string[][] matriz, string palavra)
+        {
+            // acionado Tupla para poder retornar ambos os valores, pontos e acertos ao mesmo tempo)
+
+            finalizar = "";
+            int acertos = 0;
             int acertosTemp = 0;
             int pontos = 0;
-            string numProcura = "";
-            //bool confere = false;
+            string[] posAnteriores = new string[5];
+            string[] vetorPalavra = new string[palavra.Length];
+            
 
-
-            for (int i = 0; i < matriz.Length; i++)
+            for (int a = 0; a < palavra.Length; a++)
             {
-                for (int j = 0; j < matriz[i].Length; j++)
+                vetorPalavra[a] = palavra[a].ToString();
+
+                for (int i = 0; i < matriz.Length; i++)
                 {
-                    if (matriz[i][j] == posicao[0].ToString())
+                    for (int j = 0; j < matriz[i].Length; j++)
                     {
-                        //confere = true;
-                        numProcura = matriz[i][j];
-                        acertos += 1;
-                        acertosTemp += 1;
-                        
-                        if (acertosTemp == 2)
+                        // verifica dentro da tabela se existe ou não a primeira letra, se se sim, já a pontua
+
+                        if (matriz[i][j] == vetorPalavra[0] && a == 0)
                         {
-                            pontos += 1;
-                            acertosTemp = 0;
+                            posAnteriores[0] = matriz[i][j];
+                            acertos += 1;
+                            acertosTemp += 1;
+
+                            if (acertosTemp == 2)
+                            {
+                                pontos += 1;
+                                acertosTemp = 0;
+                            }
+                            finalizar = "fim";
+                            break;
                         }
-                        
-                        i = 20;
-                        break;
-                    }
-                }
-            }
-            //if (confere)
-            //{
-            //    for (int k = 1; k < nu.Length; k++)
-            //    {
-            //        for (int i = 0; i < matriz.Length; i++)
-            //        {
-            //            for (int j = 0; j < matriz[i].Length; j++)
-            //            {
-            //                if (matriz[i][j] == numProcura)
-            //                {
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i - 1][j - 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i][j - 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i - 1][j]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i + 1][j + 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i + 1][j - 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i - 1][j + 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i + 1][j]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    try
-            //                    {
-            //                        lista.Add(matriz[i][j + 1]);
-            //                    }
-            //                    catch (Exception)
-            //                    {
-            //                    }
-            //                    for (int l = 0; l < lista.Count; l++)
-            //                    {
-            //                        if (nu[k].ToString() == lista[l])
-            //                        {
-            //                            numProcura = lista[l];
-            //                            points += 0.5;
-            //                            i = 2;
-            //                            j = 2;
-            //                            break;
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
 
-            //}
+                        // verifica e atribui pontos as posições seguintes
 
-            return pontos;
+                        else if (a >= 1 && matriz[i][j] == vetorPalavra[a])
+                        {
+                            //para cada letra, ele criará um range em volta da letra em questão
+                            // para conferir quais posições serão validas, e se sim, ser capaz de pontuar
+                            //
+                            // ☑    ☑   ☑
+                            //    ↖  ↑  ↗
+                            // ☑ ← [A] → ☑ 
+                            //    ↙  ↓  ↘
+                            // ☑    ☑   ☑
+                            //  
+
+                            if (
+                                posAnteriores[a - 1] == matriz[i - 1][j - 1] || // diagonal superior esqueda
+                                posAnteriores[a - 1] == matriz[i][j - 1] || // cima 
+                                posAnteriores[a - 1] == matriz[i + 1][j - 1] || // diagonal superior direita
+                                posAnteriores[a - 1] == matriz[i - 1][j] || // esquerda
+                                posAnteriores[a - 1] == matriz[i + 1][j] || // direita
+                                posAnteriores[a - 1] == matriz[i - 1][j + 1] || // diagonal inferior esquerda
+                                posAnteriores[a - 1] == matriz[i][j + 1] || // baixo
+                                posAnteriores[a - 1] == matriz[i + 1][j + 1]    // diagonal inferior direta
+                                )
+                            {
+
+
+                                if (posAnteriores.Contains(vetorPalavra[a]))
+                                {
+                                    finalizar = "erro";
+                                    return (pontos, acertos);
+                                }
+                                else
+                                {
+                                    posAnteriores[a] = matriz[i][j];
+                                    acertos += 1;
+                                    acertosTemp += 1;
+
+                                    if (acertosTemp == 2)
+                                    {
+                                        pontos += 1;
+                                        acertosTemp = 0;
+                                    }
+                                    finalizar = "fim";
+                                    break;
+
+                                }
+                            }
+                            else
+                            {
+                                return (pontos, acertos);
+                            }
+                        }
+
+                        else
+                        {
+                            finalizar = "erro";
+                            return (pontos, acertos);
+                        }
+
+                    }// j
+
+                    if (finalizar == "fim")
+                    { break; }
+
+                }// i
+
+               
+            }// a
+
+            return (pontos, acertos);
         }
+
     }
 }
 

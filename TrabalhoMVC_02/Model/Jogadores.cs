@@ -10,7 +10,7 @@ namespace TrabalhoMVC_02.Model
     {
         public int Rodada { get; set; }
         public string Palavra { get; set; }
+        public int Acertos { get; set; }
         public int Pontos { get; set; }
-        public int Jogador { get; set; }
     }
 }
