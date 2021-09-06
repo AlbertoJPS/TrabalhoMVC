@@ -28,7 +28,7 @@ namespace TrabalhoMVC_02.Controller
             int pontos = 0;
             string[] posAnteriores = new string[5];
             string[] vetorPalavra = new string[palavra.Length];
-            
+
 
             for (int a = 0; a < palavra.Length; a++)
             {
@@ -70,15 +70,16 @@ namespace TrabalhoMVC_02.Controller
                             // ☑    ☑   ☑
                             //  
 
-                            if (
-                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior esqueda
-                                posAnteriores[a - 1] == matriz[i][j - 1 == -1 ? 0 : j -1]     || // cima 
+                            // foi usado operação ternaria para conter os erros de out of range, condicionando a comparação sempre ao q está dentro da tabela
+
+                            if (posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior esqueda
+                                posAnteriores[a - 1] == matriz[i][j - 1 == -1 ? 0 : j - 1] || // cima 
                                 posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior direita
-                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j]     || // esquerda
-                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j]     || // direita
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j] || // esquerda
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j] || // direita
                                 posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j + 1 == 3 ? 2 : j + 1] || // diagonal inferior esquerda
-                                posAnteriores[a - 1] == matriz[i][j + 1 == 3 ? 2 : j + 1]     || // baixo
-                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j + 1 == 3 ? 2 : j + 1]    // diagonal inferior direta
+                                posAnteriores[a - 1] == matriz[i][j + 1 == 3 ? 2 : j + 1] || // baixo
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j + 1 == 3 ? 2 : j + 1]      // diagonal inferior direta
                                 )
                             {
 
@@ -93,7 +94,7 @@ namespace TrabalhoMVC_02.Controller
 
                                 if (posAnteriores.Contains(vetorPalavra[a]))
                                 {
-                                    finalizar = "erro";
+
                                     return (pontos, acertos);
                                 }
                                 else
@@ -114,7 +115,7 @@ namespace TrabalhoMVC_02.Controller
                             }
                             else
                             {
-                                finalizar = "erro";
+
                                 return (pontos, acertos);
                             }
                         }
@@ -126,7 +127,7 @@ namespace TrabalhoMVC_02.Controller
 
                 }// i
 
-               
+
             }// a
 
             return (pontos, acertos);
