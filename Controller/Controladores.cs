@@ -71,14 +71,14 @@ namespace TrabalhoMVC_02.Controller
                             //  
 
                             if (
-                                posAnteriores[a - 1] == matriz[i - 1][j - 1] || // diagonal superior esqueda
-                                posAnteriores[a - 1] == matriz[i][j - 1]     || // cima 
-                                posAnteriores[a - 1] == matriz[i + 1][j - 1] || // diagonal superior direita
-                                posAnteriores[a - 1] == matriz[i - 1][j]     || // esquerda
-                                posAnteriores[a - 1] == matriz[i + 1][j]     || // direita
-                                posAnteriores[a - 1] == matriz[i - 1][j + 1] || // diagonal inferior esquerda
-                                posAnteriores[a - 1] == matriz[i][j + 1]     || // baixo
-                                posAnteriores[a - 1] == matriz[i + 1][j + 1]    // diagonal inferior direta
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior esqueda
+                                posAnteriores[a - 1] == matriz[i][j - 1 == -1 ? 0 : j -1]     || // cima 
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior direita
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j]     || // esquerda
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j]     || // direita
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j + 1 == 3 ? 2 : j + 1] || // diagonal inferior esquerda
+                                posAnteriores[a - 1] == matriz[i][j + 1 == 3 ? 2 : j + 1]     || // baixo
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j + 1 == 3 ? 2 : j + 1]    // diagonal inferior direta
                                 )
                             {
 
