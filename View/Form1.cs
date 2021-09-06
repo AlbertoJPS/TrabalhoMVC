@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabalhoMVC_02.Controller;
 
 namespace TrabalhoMVC_02
 {
@@ -40,58 +41,54 @@ namespace TrabalhoMVC_02
             matrix9.Text = Model.Geradores.iniciaTabuleiro("R", "S", "Z");
         }
 
-        private void buttonIniciar_Click(object sender, EventArgs e)
+        private void textBoxPalavra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (e.KeyChar == (char)13)
+            {
+                 buttonIniciar.PerformClick();                
+            }
+        }
+
+        private  void buttonIniciar_Click(object sender, EventArgs e)
         {
             textBoxPalavra.Text = textBoxPalavra.Text.ToUpper();
 
-                                 //---------------------------------------------------------------------------------------------------------------------------------
-                                 //---------------------------------------------------------------------------------------------------------------------------------
-                                 //
-                                 // fazer uma verificação para descobrir se são apenas letras para dar continuidade,
-                                 // ou possuem numeros e caracteres especiais dentro da palavra 
-                                 //
-                                 //---------------------------------------------------------------------------------------------------------------------------------
-                                 //---------------------------------------------------------------------------------------------------------------------------------
-           
-            bool repetido = false;
-            string[][] matriztabuleiro = new string[3][];
+            bool palavra = Controladores.VerificaPalavra(textBoxPalavra.Text);
 
-            for (int i = 0; i < matriztabuleiro.Length; i++)
+            if (palavra == true)
             {
-                matriztabuleiro[i] = new string[3];
-            }
+                bool repetido = false;
+                string[][] matriztabuleiro = new string[3][];
 
-            matriztabuleiro[0][0] = matrix1.Text;
-            matriztabuleiro[0][1] = matrix2.Text;
-            matriztabuleiro[0][2] = matrix3.Text;
-
-            matriztabuleiro[1][0] = matrix4.Text;
-            matriztabuleiro[1][1] = matrix5.Text;
-            matriztabuleiro[1][2] = matrix6.Text;
-
-            matriztabuleiro[2][0] = matrix7.Text;
-            matriztabuleiro[2][1] = matrix8.Text;
-            matriztabuleiro[2][2] = matrix9.Text;
-
-
-
-            foreach (var item in ListaDePalavras)
-            {
-                if (item == textBoxPalavra.Text)
+                for (int i = 0; i < matriztabuleiro.Length; i++)
                 {
-                    repetido = true;
+                    matriztabuleiro[i] = new string[3];
                 }
-            }
 
-            if (repetido == false)
-            {
-                // faz uma tentativa na procura por erros, e em seguida se o resultado for positivo, dá continuidade ao programa
-                // em caso de erro ele apaga o q foi ecrito na caixa de texto e da um aviso de erro
+                matriztabuleiro[0][0] = matrix1.Text;
+                matriztabuleiro[0][1] = matrix2.Text;
+                matriztabuleiro[0][2] = matrix3.Text;
 
-                bool valido = true;
-                Controller.Controladores.CalculaPontos(matriztabuleiro, textBoxPalavra.Text);
-                
-                if (Controller.Controladores.PalavraInvalida(valido) == true)
+                matriztabuleiro[1][0] = matrix4.Text;
+                matriztabuleiro[1][1] = matrix5.Text;
+                matriztabuleiro[1][2] = matrix6.Text;
+
+                matriztabuleiro[2][0] = matrix7.Text;
+                matriztabuleiro[2][1] = matrix8.Text;
+                matriztabuleiro[2][2] = matrix9.Text;
+
+
+
+                foreach (var item in ListaDePalavras)
+                {
+                    if (item == textBoxPalavra.Text)
+                    {
+                        repetido = true;
+                    }
+                }
+
+                if (repetido == false)
                 {
                     ListaDePalavras.Add(textBoxPalavra.Text);
 
@@ -103,17 +100,17 @@ namespace TrabalhoMVC_02
                     dataGridView.Rows.Add(jogada.Rodada, jogada.Palavra, jogada.Acertos, jogada.Pontos);
 
                     textBoxPalavra.Clear();
+
                 }
-                else
+                else if (repetido == true)
                 {
-                    MessageBox.Show("Contém Letra Repetida ou Invalida, tente outra!");
+                    MessageBox.Show("Palavra Repetida, tente outra vez!");
                     textBoxPalavra.Clear();
-                } 
-            
+                }
             }
-            else if (repetido == true)
+            else 
             {
-                MessageBox.Show("Palavra Repetida, tente outra!");
+                MessageBox.Show("Palavra Invalida, tente outra vez!");
                 textBoxPalavra.Clear();
             }
             
@@ -131,5 +128,7 @@ namespace TrabalhoMVC_02
         {
             Environment.Exit(0);
         }
+
+        
     }
 }

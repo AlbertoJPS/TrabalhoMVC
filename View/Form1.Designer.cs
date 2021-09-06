@@ -54,7 +54,6 @@ namespace TrabalhoMVC_02
             this.matrix7 = new System.Windows.Forms.Button();
             this.matrix8 = new System.Windows.Forms.Button();
             this.matrix9 = new System.Windows.Forms.Button();
-            this.a = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,6 +158,7 @@ namespace TrabalhoMVC_02
             // textBoxPalavra
             // 
             this.textBoxPalavra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxPalavra.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxPalavra.Font = new System.Drawing.Font("Immortal", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBoxPalavra.ForeColor = System.Drawing.Color.SpringGreen;
             this.textBoxPalavra.Location = new System.Drawing.Point(246, 342);
@@ -169,6 +169,7 @@ namespace TrabalhoMVC_02
             this.textBoxPalavra.TabIndex = 2;
             this.textBoxPalavra.Tag = "";
             this.textBoxPalavra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPalavra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPalavra_KeyPress);
             // 
             // buttonIniciar
             // 
@@ -327,23 +328,12 @@ namespace TrabalhoMVC_02
             this.matrix9.Text = "9";
             this.matrix9.UseVisualStyleBackColor = false;
             // 
-            // a
-            // 
-            this.a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.a.Location = new System.Drawing.Point(597, -2);
-            this.a.Name = "a";
-            this.a.Size = new System.Drawing.Size(10, 10);
-            this.a.TabIndex = 0;
-            this.a.Text = "a";
-            this.a.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(604, 517);
-            this.Controls.Add(this.a);
             this.Controls.Add(this.matrix9);
             this.Controls.Add(this.matrix8);
             this.Controls.Add(this.matrix7);
@@ -392,7 +382,6 @@ namespace TrabalhoMVC_02
         private System.Windows.Forms.DataGridViewTextBoxColumn Palavra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Acertos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pontos;
-        private System.Windows.Forms.Button a;
     }
 }
 

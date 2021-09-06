@@ -9,24 +9,15 @@ namespace TrabalhoMVC_02.Controller
 {
     class Controladores
     {
-        public static string finalizar = "";
-        public static bool PalavraInvalida(bool valido)
-        {
-            if (finalizar == "erro")
-            { return false; }
-            else
-            { return true; }
-        }
-
         public static (int pontos, int acertos) CalculaPontos(string[][] matriz, string palavra)
         {
             // acionado Tupla para poder retornar ambos os valores, pontos e acertos ao mesmo tempo)
 
-            finalizar = "";
+            string finalizar = "";
             int acertos = 0;
             int acertosTemp = 0;
             int pontos = 0;
-            string[] posAnteriores = new string[5];
+            string[] posAnteriores = new string[6];
             string[] vetorPalavra = new string[palavra.Length];
 
 
@@ -73,24 +64,15 @@ namespace TrabalhoMVC_02.Controller
                             // foi usado operação ternaria para conter os erros de out of range, condicionando a comparação sempre ao q está dentro da tabela
 
                             if (posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior esqueda
-                                posAnteriores[a - 1] == matriz[i][j - 1 == -1 ? 0 : j - 1] || // cima 
-                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j - 1 == -1 ? 0 : j - 1] || // diagonal superior direita
-                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j] || // esquerda
-                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j] || // direita
-                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j + 1 == 3 ? 2 : j + 1] || // diagonal inferior esquerda
-                                posAnteriores[a - 1] == matriz[i][j + 1 == 3 ? 2 : j + 1] || // baixo
+                                posAnteriores[a - 1] == matriz[i][j - 1 == -1 ? 0 : j - 1]                       || // cima 
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j - 1 == -1 ? 0 : j - 1]  || // diagonal superior direita
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j]                       || // esquerda
+                                posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j]                        || // direita
+                                posAnteriores[a - 1] == matriz[i - 1 == -1 ? 0 : i - 1][j + 1 == 3 ? 2 : j + 1]  || // diagonal inferior esquerda
+                                posAnteriores[a - 1] == matriz[i][j + 1 == 3 ? 2 : j + 1]                        || // baixo
                                 posAnteriores[a - 1] == matriz[i + 1 == 3 ? 2 : i + 1][j + 1 == 3 ? 2 : j + 1]      // diagonal inferior direta
                                 )
                             {
-
-                                //---------------------------------------------------------------------------------------------------------------------------------  
-                                //---------------------------------------------------------------------------------------------------------------------------------
-                                //
-                                // preciso arrumar para que ele faça a verificação para saber se a letra anterior (a posição anterior),
-                                //já foi usada, e se essa mesma anterior se encontra adjacente a letra atual (a posição atual) 
-                                //
-                                //---------------------------------------------------------------------------------------------------------------------------------
-                                //---------------------------------------------------------------------------------------------------------------------------------
 
                                 if (posAnteriores.Contains(vetorPalavra[a]))
                                 {
@@ -115,7 +97,6 @@ namespace TrabalhoMVC_02.Controller
                             }
                             else
                             {
-
                                 return (pontos, acertos);
                             }
                         }
@@ -133,6 +114,22 @@ namespace TrabalhoMVC_02.Controller
             return (pontos, acertos);
         }
 
+        public static bool VerificaPalavra(string palavra)
+        {
+            char[] letra = palavra.ToCharArray();
+
+            char lendo = ' ';
+
+            for (int cont = 0; cont < letra.Length; cont++)
+            {
+                lendo = letra[cont];
+
+                if (char.IsLetter(lendo))
+
+                    return true;
+            }
+            return false;
+        }
     }
 }
 
