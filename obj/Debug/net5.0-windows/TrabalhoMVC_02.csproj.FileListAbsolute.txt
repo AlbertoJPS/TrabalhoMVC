@@ -35,3 +35,4 @@ D:\Entra21\TrabalhoMVC_02\obj\Debug\net5.0-windows\TrabalhoMVC_02.dll
 D:\Entra21\TrabalhoMVC_02\obj\Debug\net5.0-windows\ref\TrabalhoMVC_02.dll
 D:\Entra21\TrabalhoMVC_02\obj\Debug\net5.0-windows\TrabalhoMVC_02.pdb
 D:\Entra21\TrabalhoMVC_02\obj\Debug\net5.0-windows\TrabalhoMVC_02.genruntimeconfig.cache
+D:\Entra21\TrabalhoMVC_02\obj\Debug\net5.0-windows\TrabalhoMVC_02.Properties.Resources.resources

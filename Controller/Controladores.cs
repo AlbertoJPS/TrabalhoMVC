@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace TrabalhoMVC_02.Controller
 {
-    class Controladores
+    class Controladores 
     {
         public static (int pontos, int acertos) CalculaPontos(string[][] matriz, string palavra)
         {
-            // acionado Tupla para poder retornar ambos os valores, pontos e acertos ao mesmo tempo)
+            // acionado Tupla para poder retornar ambos os valores, pontos e acertos ao mesmo tempo
 
             string finalizar = "";
             int acertos = 0;
@@ -129,6 +129,25 @@ namespace TrabalhoMVC_02.Controller
                     return true;
             }
             return false;
+        }
+
+        public static (string matrix1, string matrix2, string matrix3, string matrix4, string matrix5, string matrix6, string matrix7, string matrix8, string matrix9) EscreveMatrix()
+        {
+            // acionado Tupla para poder retornar ambos os valores, pontos e acertos ao mesmo tempo
+
+            string matrix1 = Model.Geradores.iniciaTabuleiro("A", "D");
+            string matrix2 = Model.Geradores.iniciaTabuleiro("E", "F");
+            string matrix3 = Model.Geradores.iniciaTabuleiro("B", "C");
+
+            string matrix4 = Model.Geradores.iniciaTabuleiro("G", "I", "U");
+            string matrix5 = Model.Geradores.iniciaTabuleiro("H", "J", "V");
+            string matrix6 = Model.Geradores.iniciaTabuleiro("K", "L");
+
+            string matrix7 = Model.Geradores.iniciaTabuleiro("M", "O", "Q");
+            string matrix8 = Model.Geradores.iniciaTabuleiro("N", "T", "P");
+            string matrix9 = Model.Geradores.iniciaTabuleiro("R", "S", "Z");
+
+            return (matrix1, matrix2, matrix3, matrix4, matrix5, matrix6, matrix7, matrix8, matrix9) ;
         }
     }
 }

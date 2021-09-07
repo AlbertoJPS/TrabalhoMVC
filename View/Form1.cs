@@ -19,31 +19,28 @@ namespace TrabalhoMVC_02
         public Form1()
         {
             InitializeComponent();
-            EscreveMatrix();
+
+            matrix1.Text = Controladores.EscreveMatrix().matrix1;
+            matrix2.Text = Controladores.EscreveMatrix().matrix2;
+            matrix3.Text = Controladores.EscreveMatrix().matrix3;
+            matrix4.Text = Controladores.EscreveMatrix().matrix4;
+            matrix5.Text = Controladores.EscreveMatrix().matrix5;
+            matrix6.Text = Controladores.EscreveMatrix().matrix6;
+            matrix7.Text = Controladores.EscreveMatrix().matrix7;
+            matrix8.Text = Controladores.EscreveMatrix().matrix8;
+            matrix9.Text = Controladores.EscreveMatrix().matrix9;
+
+
+            // Matrix será a referencia usada para cada botão de letra usado no tabuleiro
         }
 
-        public void EscreveMatrix()
-        {
-            // Matrix será a referencia usada para cada letra usada no tabuleiro
-
-
-            // FUNÇÃO ESCREVEMATRIZ DEVE SER FEITA NO CONTROLLER E SER PUXADO PARA O VIEW (AVISO DO PROFESSOR)
-            matrix1.Text = Model.Geradores.iniciaTabuleiro("A", "D");
-            matrix2.Text = Model.Geradores.iniciaTabuleiro("E", "F");
-            matrix3.Text = Model.Geradores.iniciaTabuleiro("B", "C");
-
-            matrix4.Text = Model.Geradores.iniciaTabuleiro("G", "I", "U");
-            matrix5.Text = Model.Geradores.iniciaTabuleiro("H", "J", "V");
-            matrix6.Text = Model.Geradores.iniciaTabuleiro("K", "L");
-
-            matrix7.Text = Model.Geradores.iniciaTabuleiro("M", "O", "Q");
-            matrix8.Text = Model.Geradores.iniciaTabuleiro("N", "T", "P");
-            matrix9.Text = Model.Geradores.iniciaTabuleiro("R", "S", "Z");
-        }
+        
 
         private void textBoxPalavra_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
+         // utilizado para facilitar a experiência de usuário, quando apertar enter após escrever a palavra, ele clica sozinho no botão
+         
             if (e.KeyChar == (char)13)
             {
                  buttonIniciar.PerformClick();                
@@ -60,6 +57,8 @@ namespace TrabalhoMVC_02
             {
                 bool repetido = false;
                 string[][] matriztabuleiro = new string[3][];
+
+                // cria uma matriz baseada nos boões e nas letras correspondentes para possibilitar um mapeamento mais funcional
 
                 for (int i = 0; i < matriztabuleiro.Length; i++)
                 {
@@ -118,7 +117,16 @@ namespace TrabalhoMVC_02
 
         private void buttonResetar_Click(object sender, EventArgs e)
         {
-            EscreveMatrix();
+            matrix1.Text = Controladores.EscreveMatrix().matrix1;
+            matrix2.Text = Controladores.EscreveMatrix().matrix2;
+            matrix3.Text = Controladores.EscreveMatrix().matrix3;
+            matrix4.Text = Controladores.EscreveMatrix().matrix4;
+            matrix5.Text = Controladores.EscreveMatrix().matrix5;
+            matrix6.Text = Controladores.EscreveMatrix().matrix6;
+            matrix7.Text = Controladores.EscreveMatrix().matrix7;
+            matrix8.Text = Controladores.EscreveMatrix().matrix8;
+            matrix9.Text = Controladores.EscreveMatrix().matrix9;
+
             textBoxPalavra.Clear();
             dataGridView.Rows.Clear();
             ListaDePalavras.Clear();

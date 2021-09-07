@@ -27,7 +27,7 @@ namespace TrabalhoMVC_02
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private  void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,6 +36,10 @@ namespace TrabalhoMVC_02
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.labelTitulo = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Rodada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Palavra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPalavra = new System.Windows.Forms.Label();
             this.textBoxPalavra = new System.Windows.Forms.TextBox();
             this.buttonIniciar = new System.Windows.Forms.Button();
@@ -50,10 +54,7 @@ namespace TrabalhoMVC_02
             this.matrix7 = new System.Windows.Forms.Button();
             this.matrix8 = new System.Windows.Forms.Button();
             this.matrix9 = new System.Windows.Forms.Button();
-            this.Rodada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Palavra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acertos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelApresentacao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +87,63 @@ namespace TrabalhoMVC_02
             this.dataGridView.Size = new System.Drawing.Size(546, 197);
             this.dataGridView.TabIndex = 100;
             this.dataGridView.TabStop = false;
+            // 
+            // Rodada
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Rodada.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Rodada.HeaderText = "Rodada";
+            this.Rodada.MaxInputLength = 1000;
+            this.Rodada.Name = "Rodada";
+            this.Rodada.ReadOnly = true;
+            // 
+            // Palavra
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Palavra.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Palavra.HeaderText = "Palavra";
+            this.Palavra.MaxInputLength = 6;
+            this.Palavra.Name = "Palavra";
+            this.Palavra.ReadOnly = true;
+            this.Palavra.Width = 200;
+            // 
+            // Acertos
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Acertos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Acertos.HeaderText = "Acertos";
+            this.Acertos.MaxInputLength = 1000;
+            this.Acertos.Name = "Acertos";
+            this.Acertos.ReadOnly = true;
+            // 
+            // Pontos
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SpringGreen;
+            this.Pontos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Pontos.HeaderText = "Pontos";
+            this.Pontos.MaxInputLength = 1000;
+            this.Pontos.Name = "Pontos";
+            this.Pontos.ReadOnly = true;
             // 
             // labelPalavra
             // 
@@ -271,69 +329,25 @@ namespace TrabalhoMVC_02
             this.matrix9.Text = "9";
             this.matrix9.UseVisualStyleBackColor = false;
             // 
-            // Rodada
+            // labelApresentacao
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Rodada.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Rodada.HeaderText = "Rodada";
-            this.Rodada.MaxInputLength = 1000;
-            this.Rodada.Name = "Rodada";
-            this.Rodada.ReadOnly = true;
-            // 
-            // Palavra
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Palavra.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Palavra.HeaderText = "Palavra";
-            this.Palavra.MaxInputLength = 6;
-            this.Palavra.Name = "Palavra";
-            this.Palavra.ReadOnly = true;
-            this.Palavra.Width = 200;
-            // 
-            // Acertos
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Acertos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Acertos.HeaderText = "Acertos";
-            this.Acertos.MaxInputLength = 1000;
-            this.Acertos.Name = "Acertos";
-            this.Acertos.ReadOnly = true;
-            // 
-            // Pontos
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Immortal", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SpringGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SpringGreen;
-            this.Pontos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Pontos.HeaderText = "Pontos";
-            this.Pontos.MaxInputLength = 1000;
-            this.Pontos.Name = "Pontos";
-            this.Pontos.ReadOnly = true;
+            this.labelApresentacao.AutoSize = true;
+            this.labelApresentacao.BackColor = System.Drawing.Color.Black;
+            this.labelApresentacao.Font = new System.Drawing.Font("Immortal", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelApresentacao.ForeColor = System.Drawing.Color.Silver;
+            this.labelApresentacao.Location = new System.Drawing.Point(18, 522);
+            this.labelApresentacao.Name = "labelApresentacao";
+            this.labelApresentacao.Size = new System.Drawing.Size(569, 17);
+            this.labelApresentacao.TabIndex = 101;
+            this.labelApresentacao.Text = "Desenvolvido por Alberto JPS, Antônio e Gabriel Coelho - Turma C# Manhã";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(604, 517);
+            this.ClientSize = new System.Drawing.Size(604, 545);
+            this.Controls.Add(this.labelApresentacao);
             this.Controls.Add(this.matrix9);
             this.Controls.Add(this.matrix8);
             this.Controls.Add(this.matrix7);
@@ -382,6 +396,7 @@ namespace TrabalhoMVC_02
         private System.Windows.Forms.DataGridViewTextBoxColumn Palavra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Acertos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pontos;
+        private System.Windows.Forms.Label labelApresentacao;
     }
 }
 
